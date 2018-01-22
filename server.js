@@ -25,6 +25,22 @@ app.get('/add_note', (req,res)=>{
 });
 
 
+app.get('/edit_note/:id', (req,res)=>{
+
+    const id = req.params.id;
+    fetch(`http://localhost:3004/messages/${id}`)
+      .then(response =>{
+          response.json().then(json=>{
+            res.render('edit_note',{
+              articles: json
+            });
+          })
+      })
+
+    
+});
+
+
 app.get('/', (req,res)=>{
 
     fetch('http://localhost:3004/messages')
@@ -65,7 +81,7 @@ app.post('/api/add_note', jsonParser,(req,res)=>{
 app.delete('/api/delete/:id', (req,res)=>{
   
     const id = req.params.id;
-    
+
     fetch(`http://localhost:3004/messages/${id}`,{
        method: 'DELETE' 
     }).then(response=>{
@@ -75,6 +91,26 @@ app.delete('/api/delete/:id', (req,res)=>{
         console.log(error);
     })
 
+
+});
+
+
+//PATCH
+app.patch('/api/edit_note/:id', jsonParser, (req,res)=>{
+   const id = req.params.id;
+
+   fetch(`http://localhost:3004/messages/${id}`,{
+    method: 'PATCH',
+    body: JSON.stringify(req.body),
+    headers:{
+            'Content-Type': 'application/json'
+    }
+   }).then(response=>{
+     res.status(200).send();
+   })
+   .catch(error =>{
+     console.log(error);
+  })
 
 });
 
