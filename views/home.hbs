@@ -10,7 +10,7 @@
                 <a href="/edit_note">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
-                <div class="delete">x</div>
+                <div class="delete" data-id="{{this.id}}">x</div>
             </div>
             <div class="contents">
                 <div class="title">{{this.title}}</div>
@@ -27,3 +27,27 @@
         </a>
 
     </div>
+
+    <script>
+
+      $('.delete').on('click', function(){
+         
+         const element = $(this).parents().eq(1);
+         const deletedId = $(this).data("id");
+
+         $.ajax({
+             type: 'DELETE',
+             url: `/api/delete/${deletedId}`,
+             contentType: "application/json",
+             success: (data) =>{
+                 element.remove();
+             },
+             error: ()=>{
+                 alert('Error deleting');
+             }
+         });
+
+      });
+
+
+    </script>

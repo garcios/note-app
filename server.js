@@ -55,9 +55,28 @@ app.post('/api/add_note', jsonParser,(req,res)=>{
     }).then(response=>{
         res.status(200).send();
     })
+    .catch(error =>{
+        console.log(error);
+    })
 
 });
 
+// DELETE
+app.delete('/api/delete/:id', (req,res)=>{
+  
+    const id = req.params.id;
+    
+    fetch(`http://localhost:3004/messages/${id}`,{
+       method: 'DELETE' 
+    }).then(response=>{
+        res.status(200).send();
+    })
+    .catch(error =>{
+        console.log(error);
+    })
+
+
+});
 
 
 /////############ PORT ###############///

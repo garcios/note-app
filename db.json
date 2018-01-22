@@ -1,54 +1,6 @@
 {
   "messages": [
     {
-      "owner": "Oscar",
-      "title": "test",
-      "message": "my message",
-      "id": 1
-    },
-    {
-      "owner": "Pam",
-      "title": "hey",
-      "message": "yey! I am storing this message!",
-      "id": 2
-    },
-    {
-      "owner": "SS",
-      "title": "SS",
-      "message": "SS",
-      "id": 3
-    },
-    {
-      "owner": "SS",
-      "title": "SS",
-      "message": "SS",
-      "id": 4
-    },
-    {
-      "owner": "SS",
-      "title": "SS",
-      "message": "SS!!!",
-      "id": 5
-    },
-    {
-      "owner": "SS",
-      "title": "SAF",
-      "message": "ASFASFSAF!",
-      "id": 6
-    },
-    {
-      "owner": "pAM",
-      "title": "DED",
-      "message": "yey! I am storing this message!",
-      "id": 7
-    },
-    {
-      "owner": "WD",
-      "title": "SADAS",
-      "message": "DASDSA",
-      "id": 8
-    },
-    {
       "owner": "WWW",
       "title": "WW",
       "message": "WWW",
